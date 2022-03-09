@@ -16,17 +16,21 @@ public class CourseType {
     public CourseType(String days, String name){
         this.days = days;
         this.name = name;
+
+
     }
     
     public void setDays(String days){
         this.days = days;
+
+        
     }
     
     public void setName(String name){
         this.name = name;
     }
 
-    
+
     
     public String getDays(){
         return days;
