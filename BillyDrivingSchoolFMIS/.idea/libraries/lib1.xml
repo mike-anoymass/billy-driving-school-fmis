@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/TrayNotification.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/sqlite-jdbc-3.8.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/fontawesomefx-glyphsbrowser-all-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jfoenix.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jfoenix-8.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/jfoenix-8.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/sqlite-jdbc-3.14.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/fontawesomefx-8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

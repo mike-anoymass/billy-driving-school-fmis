@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billydrivingschoolfmis.Screen2Controller">
+   <children>
+      <BorderPane layoutX="174.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <top>
+            <Label prefHeight="17.0" prefWidth="103.0" text="Students" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="33.0" prefHeight="381.0" prefWidth="244.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Student ID" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="First Name" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Last Name" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Email Address" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Phone Number" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Qualification" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Student ID" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="29.0" prefWidth="244.0">
+                           <children>
+                              <Label text="Student ID" />
+                              <TextField prefHeight="25.0" prefWidth="185.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

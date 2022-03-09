@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchor" fx:id="anchorpane" prefHeight="559.0" prefWidth="1087.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billydrivingschoolfmis.FinancialReportController">
+   <children>
+      <BorderPane layoutX="65.0" layoutY="80.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox fx:id="yearCombo" onAction="#yearCombo" prefHeight="25.0" prefWidth="151.0" promptText="Select Year" />
+                  <ComboBox fx:id="monthCombo" onAction="#monthAction" prefHeight="25.0" prefWidth="161.0" promptText="Select Month" />
+                  <JFXButton buttonType="RAISED" onAction="#generateAction" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: white;" text="Generate Report" textFill="#0ac78c">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="#0ac78c" glyphName="TABLE" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#refreshAction" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: white;" text="Clear" textFill="#290bc6">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIcon fill="#290bc6" glyphName="REFRESH" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="600.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="598.0" text="Financial Report Details" textFill="#39b598">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="288.0" prefWidth="1087.0" spacing="7.0">
+                     <children>
+                        <VBox prefHeight="246.0" prefWidth="516.0">
+                           <children>
+                              <Label fx:id="receiptLbl" alignment="CENTER" prefHeight="17.0" prefWidth="525.0" text="Receipts in ...">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="receiptsTable" prefHeight="292.0" prefWidth="563.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="180.0" prefWidth="554.0">
+                           <children>
+                              <Label fx:id="paymentsLbl" alignment="CENTER" prefHeight="17.0" prefWidth="569.0" text="Payments in ...">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="paymentsTable" prefHeight="290.0" prefWidth="563.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox id="vbb" alignment="TOP_CENTER" prefHeight="206.0" prefWidth="1087.0" spacing="7.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="600.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="1132.0" text="Financial Report Summary" textFill="#39b598">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="164.0" text="Total Receipts :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="rcLbl" prefHeight="40.0" prefWidth="164.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="164.0" text="Total Payments :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="pyLbl" prefHeight="40.0" prefWidth="164.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="profitLbl" prefHeight="40.0" prefWidth="164.0" text="Profit/Loss :">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="pLabel" prefHeight="40.0" prefWidth="164.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXButton buttonType="RAISED" onAction="#printAction" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white;" text="Print" textFill="#095dc9">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#095dc9" glyphName="PRINT" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

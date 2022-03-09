@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="646.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billydrivingschoolfmis.LoginDocumentController">
+   <children>
+      <BorderPane layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <GridPane prefHeight="322.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="imageview" fitHeight="322.0" fitWidth="346.0" nodeOrientation="INHERIT" opacity="0.91" pickOnBounds="true" smooth="false">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <viewport>
+                        <Rectangle2D width="346.0" />
+                     </viewport>
+                     <image>
+                        <Image url="@../img/p8.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+         </left>
+         <center>
+            <GridPane prefHeight="345.0" prefWidth="250.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="324.0" prefWidth="287.0" spacing="8.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="21.0" prefWidth="260.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="252.0" text="Billy Driving School FMIS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="252.0" text="Login to your Account" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXTextField id="username" fx:id="usernameTxtField" focusColor="#c6f8d1" labelFloat="true" prefHeight="25.0" prefWidth="234.0" promptText="Username" unFocusColor="WHITE">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXPasswordField id="passwd" fx:id="passwordTxtField" focusColor="#c6f8d1" labelFloat="true" promptText="Password" unFocusColor="WHITE">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="7.0" />
+                           </VBox.margin>
+                        </JFXPasswordField>
+                        <JFXButton fx:id="loginBtn" alignment="CENTER" buttonType="RAISED" onAction="#loadMainPage" prefHeight="34.0" prefWidth="242.0" ripplerFill="#1fcaf5" style="-fx-border-radius: 15; -fx-border-color: white;" text="Go-&gt;" textFill="WHITE" underline="true">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="252.0" text="Forgot Password ?" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="Arial Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pcNameLbl" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="17.0" prefWidth="275.0" textOverrun="CENTER_ELLIPSIS">
+                           <font>
+                              <Font name="Arial Black" size="11.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </center>
+         <right>
+            <JFXButton fx:id="closeBtn" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#quit" prefHeight="27.0" prefWidth="30.0" style="-fx-background-color: black; -fx-border-color: white;" text="x" textFill="WHITE" BorderPane.alignment="TOP_RIGHT">
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="RED" />
+                        <Stop color="RED" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

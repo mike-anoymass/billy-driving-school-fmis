@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="ancho" fx:id="ancho" prefHeight="642.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billydrivingschoolfmis.StudentsController">
+   <children>
+      <BorderPane layoutX="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Label fx:id="studentLbl" alignment="CENTER" prefHeight="27.0" prefWidth="1208.0" text="Students" textFill="#bf9e9e" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" top="10.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="404.0" spacing="25.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="excelFileTxt1" alignment="CENTER" onMouseClicked="#excelFileAction" prefHeight="17.0" prefWidth="243.0" text="Student Registration Form" textAlignment="CENTER" textFill="#949494" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="generateBtn" alignment="CENTER" buttonType="RAISED" onAction="#generateID" prefHeight="25.0" prefWidth="276.0" ripplerFill="#1040c6" text="Auto-Generate Student ID" textFill="#4fbfbf">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="studentIDTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Student ID" unFocusColor="#9bbfbf" />
+                  <JFXTextField fx:id="fullnameTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Full Name" unFocusColor="#9bbfbf" />
+                  <JFXTextField fx:id="pAddressTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Postal Address" unFocusColor="#9bbfbf" />
+                  <JFXTextField fx:id="phoneTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Phone" unFocusColor="#9bbfbf" />
+                  <JFXTextField fx:id="emailTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" opacity="0.74" promptText="Email" unFocusColor="#9bbfbf" />
+                  <JFXComboBox fx:id="quaCombo" labelFloat="true" opacity="0.66" prefHeight="25.0" prefWidth="457.0" promptText="Qualification" />
+                  <JFXComboBox fx:id="courseCombo" labelFloat="true" onAction="#courseOnAction" opacity="0.66" prefHeight="25.0" prefWidth="457.0" promptText="Select Course" />
+                  <JFXComboBox fx:id="durationCombo" labelFloat="true" opacity="0.66" prefHeight="25.0" prefWidth="457.0" promptText="Select Course Type" />
+                  <HBox alignment="CENTER" prefHeight="28.0" prefWidth="253.0" spacing="5.0">
+                     <children>
+                        <JFXButton fx:id="saveBtn" buttonType="RAISED" onAction="#saveAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Save" textFill="#4fbfbf">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#4fbfbf" glyphName="SAVE" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="updateBtn" buttonType="RAISED" onAction="#updateAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Update" textFill="#3854e0">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#3854e0" glyphName="EDIT" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+            </VBox>
+         </left>
+         <center>
+            <VBox alignment="CENTER" prefHeight="580.0" prefWidth="738.0" spacing="3.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="24.0" prefWidth="903.0">
+                     <children>
+                        <JFXButton fx:id="searchBtns" buttonType="RAISED" onAction="#searchBtnsAction" prefHeight="25.0" prefWidth="228.0" ripplerFill="#1040c6" text="Search Students" textFill="#aab2aa">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="loadingTxt" alignment="CENTER" prefHeight="17.0" prefWidth="346.0" text="Label" textFill="RED">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="filtersTxt" alignment="CENTER" focusColor="BLACK" labelFloat="true" onKeyReleased="#studentsFilterOnKeyReleased" opacity="0.68" prefHeight="25.0" prefWidth="243.0" promptText="Search Students" unFocusColor="#64505a">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="811.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="excelFileTxt" onMouseClicked="#excelFileAction" style="-fx-background-color: white;" text="Click Here to attach students excel file" textFill="#1bc34b">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" onAction="#importAction" prefHeight="25.0" prefWidth="78.0" ripplerFill="#5dee09" style="-fx-background-color: white;" text="Import" textFill="#3d8d08">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#3d8d08" fontSmoothingType="LCD" glyphName="ARROW_DOWN" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="exportBtn" buttonType="RAISED" onAction="#exportAction" prefHeight="25.0" prefWidth="184.0" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Export List to Excel" textFill="#4fbfbf">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="#4fbfbf" fontSmoothingType="LCD" glyphName="TABLE" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#deleteStudent" ripplerFill="#1040c6" text="Delete" textFill="#f20202">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="RED" glyphName="TRASH" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="studentTable" onKeyReleased="#studentsTableOnKeyReleasedAction" onMouseClicked="#studentTableOnMouseClickedAction" prefHeight="514.0" prefWidth="777.0">
+                     <contextMenu>
+                        <ContextMenu>
+                           <items>
+                              <MenuItem fx:id="refreshBtn" mnemonicParsing="false" onAction="#refreshAction" text="Refresh" />
+                              <MenuItem mnemonicParsing="false" onAction="#recordFeesAction" text="Record Fees Payment" />
+                              <MenuItem mnemonicParsing="false" onAction="#viewFeesAction" text="View Payment Details" />
+                           </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="7.0" left="12.0" right="7.0" top="7.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

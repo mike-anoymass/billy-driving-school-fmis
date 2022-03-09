@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-May-2021, 18:47:18
+    Author     : ANOYMASS
+*/
+
+#username{
+    -fx-background-image: url("/img/user_16.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center; 
+    -fx-unfocus-color: white;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: white;
+}
+
+#passwd{
+    -fx-background-image: url("/img/lock_16.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center; 
+    -fx-unfocus-color: white;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: white;
+}

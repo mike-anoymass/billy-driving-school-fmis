@@ -1,0 +1,6 @@
+
+#anchor1{
+    -fx-border-style: solid;
+    -fx-border-color: #cccccc transparent transparent transparent;
+    -fx-border-radius: 4px;
+}

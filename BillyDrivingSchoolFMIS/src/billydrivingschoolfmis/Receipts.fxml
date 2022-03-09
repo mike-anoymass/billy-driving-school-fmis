@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billydrivingschoolfmis.ReceiptsController">
+   <children>
+      <BorderPane layoutX="160.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <center>
+            <TableView fx:id="receiptsTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <VBox alignment="CENTER_RIGHT" prefHeight="101.0" prefWidth="593.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label fx:id="receiptLbl" alignment="CENTER" prefHeight="15.0" prefWidth="593.0" style="-fx-background-color: white;" text="Receipts" textFill="#bf9e9e">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="104.0" prefWidth="593.0">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" layoutX="7.0" layoutY="-26.0" prefHeight="32.0" prefWidth="586.0" spacing="20.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
+                           <children>
+                              <Label fx:id="loadingTxt" alignment="CENTER" prefHeight="17.0" prefWidth="223.0" text="Label" textFill="RED">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="printBtn" buttonType="RAISED" onAction="#printAction" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Report" textFill="#3854e0">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#1040c6" fontSmoothingType="LCD" glyphName="PRINT" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="exportBtn" buttonType="RAISED" onAction="#exportAction" prefHeight="25.0" prefWidth="184.0" ripplerFill="#1040c6" style="-fx-background-color: white;" text="Export List to Excel" textFill="#4fbfbf">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#4fbfbf" fontSmoothingType="LCD" glyphName="TABLE" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <HBox prefHeight="34.0" prefWidth="656.0">
+                     <children>
+                        <TextField fx:id="filterTxt" onKeyReleased="#filterDataOnkeyReleased" promptText="Search records">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="2.0" right="2.0" top="2.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="31.0" prefWidth="593.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="183.0">
+                           <children>
+                              <Label prefHeight="19.0" prefWidth="80.0" text="Records:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalRecordsLbl" prefHeight="17.0" prefWidth="151.0" text="Label" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="205.0">
+                           <children>
+                              <Label prefHeight="19.0" prefWidth="105.0" text="Total Receipts:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalFeesLbl" prefHeight="17.0" prefWidth="125.0" text="Label" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutY="3.0" prefHeight="33.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#deleteReceipt" ripplerFill="#1040c6" text="Delete" textFill="#f20202">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="RED" fontSmoothingType="LCD" glyphName="ARROW_UP" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
