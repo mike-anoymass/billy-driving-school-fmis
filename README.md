@@ -15,7 +15,6 @@ Key FUNCTIONALITIES
 	-stores and manages students fees payments
 	-stores and manages expenses data
 	-calculates students fees balance
-	-manages Employee Information , salaries etc
 	-prints student fees payment history/receipts
 	-prints an financial income statement per month or per year
 	-provides a fast search engine
